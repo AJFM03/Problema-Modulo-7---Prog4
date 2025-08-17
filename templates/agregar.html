@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Libro{% endblock %}
+
+{% block content %}
+<h2>➕ Agregar Libro</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" name="titulo" required>
+    </div>
+    <div class="mb-3">
+        <label for="autor" class="form-label">Autor</label>
+        <input type="text" class="form-control" name="autor" required>
+    </div>
+    <div class="mb-3">
+        <label for="genero" class="form-label">Género</label>
+        <input type="text" class="form-control" name="genero">
+    </div>
+    <div class="mb-3">
+        <label for="estado" class="form-label">Estado de lectura</label>
+        <select class="form-select" name="estado">
+            <option value="pendiente">Pendiente</option>
+            <option value="leyendo">Leyendo</option>
+            <option value="terminado">Terminado</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
